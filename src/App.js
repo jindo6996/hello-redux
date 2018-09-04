@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import HelloWorld from "./HelloWorld";
+import {store} from "./store";
+import { ButtonGroup } from "./ButtonGroup";
+import ButonGroup from "./ButtonGroup";
 
 class App extends Component {
-  state = {
-    tech: "React"
-  };
   render() {
-    return <HelloWorld tech={this.state.tech} />;
+    return [
+        <HelloWorld key = {1} tech={store.getState().tech} />,
+        <ButonGroup key = {2} technologies ={["React", "Elm","React-redux"]} />
+      ];
   }
 }
 
